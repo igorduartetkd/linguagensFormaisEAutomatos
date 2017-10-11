@@ -69,8 +69,9 @@ void maquina( int estado, int posicao){
 		return;
 	}
 	cout<<"->";	
+	
 	vector<int> aux2 = matrizTransicao[estado][0]; //lambida transition
-
+	//realizando transicoes lambida para todos os estados destino da matriz
 	for(unsigned i = 0; i < aux2.size(); i++){
 		cout<<"{";
 		int x = (matrizTransicao[estado][posicao])[i];
@@ -84,6 +85,8 @@ void maquina( int estado, int posicao){
 	aux2.clear();
 	aux2 = matrizTransicao[estado][simbolo-96];
 	posicao++;
+	//fazendo a transicao para os estados da matriz de transicao
+	//quando a entrada for o estado atual e ler a proxima letra
 	for(unsigned i = 0; i < aux2.size(); i++){
 		cout<<"(";
 		int x = aux2[i];
